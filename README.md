@@ -18,5 +18,26 @@ def merge_sort(array):
     
 ```
 
+Hàm merge(left_array, right_array) được sử dụng để hợp nhất hai mảng con đã được sắp xếp. Hai chỉ số i và j được sử dụng để theo dõi vị trí hiện tại trong mảng con bên trái và bên phải. Với mỗi phần tử của mảng con, phần tử nhỏ hơn sẽ được thêm vào kết quả và chỉ số tương ứng được tăng lên 1. Cuối cùng, mảng kết quả được hợp nhất từ các phần tử còn lại trong mảng con bên trái hoặc bên phải.
+
+```
+def merge(left_array, right_array):
+    i = j = 0
+    result = []
+
+    while i < len(left_array) and j < len(right_array):
+        if left_array[i] < right_array[j]:
+            result.append(left_array[i])
+            i += 1
+        else:
+            result.append(right_array[j])
+            j += 1
+
+    result += left_array[i:]
+    result += right_array[j:]
+
+    return result
+```
+
 ## Demo
 ![image](https://user-images.githubusercontent.com/94096493/224488350-5f275e74-aa70-4a62-9d11-9ad9d0010975.png)
